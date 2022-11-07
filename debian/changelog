@@ -1,4 +1,4 @@
-base-files (12.2ubuntu3+vanilla-2) xenial; urgency=medium
+base-files (12.2ubuntu3+vanilla-3) kinetic; urgency=medium
 
   * package updates for kinetic
 
