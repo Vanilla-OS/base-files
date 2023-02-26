@@ -1,3 +1,9 @@
+base-files (12.3ubuntu3+vanilla-5) lunar; urgency=medium
+
+  * package updates for lunar
+
+ -- Mirko Brombin <send@mirko.pm>  Fri, 21 Oct 2022 11:00:00 +0000
+
 base-files (12.2ubuntu3+vanilla-4) kinetic; urgency=medium
 
   * package updates for kinetic
