@@ -1,6 +1,6 @@
-base-files (12.3ubuntu3+vanilla-5) lunar; urgency=medium
+base-files (12.4vanilla) unstable; urgency=medium
 
-  * package updates for lunar
+  * package updates for orchid
 
  -- Mirko Brombin <send@mirko.pm>  Fri, 21 Oct 2022 11:00:00 +0000
 
