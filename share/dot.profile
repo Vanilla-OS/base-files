@@ -6,4 +6,6 @@ if [ "$BASH" ]; then
   fi
 fi
 
+PATH="$HOME/.local/bin:$PATH"
+
 mesg n || true
