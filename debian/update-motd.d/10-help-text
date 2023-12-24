@@ -27,6 +27,6 @@ if [ -z "$DISTRIB_RELEASE" ] && [ -x /usr/bin/lsb_release ]; then
 	DISTRIB_RELEASE=$(lsb_release -sr)
 fi
 
-URL="http://spottech.xyz/"
+URL="https://vanillaos.org/"
 
 printf "\n * Website:  %s\n" "$URL"
