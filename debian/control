@@ -1,13 +1,13 @@
 Source: base-files
 Section: admin
 Priority: required
-Maintainer: Mirko Brombin <send@mirko.pm>
-XSBC-Original-Maintainer: Santiago Vila <sanvila@debian.org>
+Maintainer: Santiago Vila <sanvila@debian.org>
 Standards-Version: 4.6.2
+Build-Depends: debhelper-compat (= 13), debhelper (>= 13.10~)
 Rules-Requires-Root: binary-targets
 
 Package: base-files
-Provides: base
+Provides: base, usr-is-merged
 Architecture: any
 Pre-Depends: awk
 Depends: ${misc:Depends}
@@ -21,9 +21,3 @@ Description: Debian base system miscellaneous files
  several important miscellaneous files, such as /etc/debian_version,
  /etc/host.conf, /etc/issue, /etc/motd, /etc/profile, and others,
  and the text of several common licenses in use on Debian systems.
-
-Package: lsb-release-udeb
-Section: debian-installer
-Architecture: all
-Priority: extra
-Description: LSB release information
