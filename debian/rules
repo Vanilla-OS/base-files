@@ -25,9 +25,7 @@ build:
 	$(CC) $(CFLAGS) $(LDFLAGS) -o locale-check locale-check.c
 
 clean:
-	rm -f build
-	rm -f `find . -name "*~"`
-	rm -rf debian/tmp debian/lsb-release-udeb debian/files* core debian/substvars
+	echo "Nothing to clean"
 
 binary-arch: build
 	rm -rf debian/tmp
