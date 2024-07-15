@@ -8,4 +8,4 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
-mesg n || true
+mesg n 2> /dev/null || true
