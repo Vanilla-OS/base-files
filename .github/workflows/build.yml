@@ -1,12 +1,13 @@
-name: build
+name: Build
 
 on:
   push:
     branches: [ "main" ]
+  pull_request:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     container:
       image: ghcr.io/vanilla-os/pico:main
       volumes:
@@ -29,8 +30,20 @@ jobs:
       run: |
         dpkg-buildpackage --no-sign
         mv ../*.deb ../base-files.deb
+    
+    - name: Calculate and Save Checksums
+      run: |
+        sha256sum /__w/base-files/base-files.deb >> checksums.txt
+  
+    - uses: actions/upload-artifact@v4
+      with:
+        name: base-files
+        path: |
+            /__w/base-files/base-files.deb
+            checksums.txt
 
-    - uses: softprops/action-gh-release@v1
+    - uses: softprops/action-gh-release@v2
+      if: github.ref == 'refs/heads/main'
       with:
         token: "${{ secrets.GITHUB_TOKEN }}"
         tag_name: "continuous"
@@ -38,3 +51,4 @@ jobs:
         name: "Continuous Build"
         files: |
           /__w/base-files/base-files.deb
+          checksums.txt
