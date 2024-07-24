@@ -1,4 +1,4 @@
-name: build
+name: Build
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     container:
       image: ghcr.io/vanilla-os/pico:main
       volumes:
