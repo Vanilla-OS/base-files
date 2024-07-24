@@ -3,6 +3,7 @@ name: Build
 on:
   push:
     branches: [ "main" ]
+  pull_request:
 
 jobs:
   build:
@@ -29,8 +30,15 @@ jobs:
       run: |
         dpkg-buildpackage --no-sign
         mv ../*.deb ../base-files.deb
+  
+    - uses: actions/upload-artifact@v4
+      with:
+        name: base-files
+        path: |
+            /__w/base-files/base-files.deb
 
     - uses: softprops/action-gh-release@v1
+      if: github.ref == 'refs/heads/main'
       with:
         token: "${{ secrets.GITHUB_TOKEN }}"
         tag_name: "continuous"
